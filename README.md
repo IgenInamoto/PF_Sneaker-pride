@@ -1,7 +1,7 @@
 # <strong>Sneaker-Pride</strong>
 
 ## サイト概要
-
+![Sneaker pride](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/65800761-4763-4fc3-bb3f-cb41dc9dcb60)
 ### サイトテーマ
 <strong>他の人も褒めて自分も褒められて承認欲求満たして更にスニーカーを好きになるためのコミュニティサイトです。</strong>
 
