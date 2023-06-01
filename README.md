@@ -1,5 +1,5 @@
 # Sneaker-Pride
-
+![Sneaker pride](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/65800761-4763-4fc3-bb3f-cb41dc9dcb60)
 ## サイト概要
 
 ### サイトテーマ
@@ -31,4 +31,4 @@ Twitter等のSNSでもスニーカーの自慢は出来るが、もっとスニ�
 - IDE：Cloud9
 
 ## 使用素材
-使用検討中です。
+使用検討中です。(著作権侵害を防ぐため自作ロゴ、フリー素材のみ使用予定)
