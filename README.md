@@ -1,4 +1,5 @@
 # Sneaker-Pride
+![Sneaker pride](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/65800761-4763-4fc3-bb3f-cb41dc9dcb60)
 
 ## サイト概要
 
