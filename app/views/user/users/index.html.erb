@@ -1,0 +1,47 @@
+<!--ユーザーの一覧ページ-->
+<% flash.each do |message_type, message| %>
+  <div><%= message %></div>
+<% end %>
+<p id="notice"></p>
+ <div class="container px-5 px-sm-0">
+  <div id="error_explanation">
+<% if @user.errors.any? %>
+  <%= @user.errors.count %> error prohibited this obj from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+  
+
+    <div class="row">
+    <div class= "col-md-3">
+    
+        <!--部分テンプレート挿入部分-->
+       <%= render 'layouts/template', user: @user, sneaker: @sneaker %>
+        <!--部分テンプレート挿入部分-->
+    </div>
+           
+      <div class="col-md-8 offset-md-1">
+        <h2>Users</h2>
+        <table class='table'>
+         <thead>
+          <tr>
+           <th>image</th>
+           <th>name</th>
+           <th colspan="3"></th>
+          </tr>
+         </thead>
+        <% @users.each do |user| %>
+        <tr>
+        <td><%#= image_tag user.get_profile_image(100,100) %></td>
+       <th><%= user.name %><th>
+            <th><%= link_to "Show",user_path(user.id) %></th>
+       </tr>
+       <% end %>
+       </table>
+       </div>
+    </div>
+    </div>
+</div>

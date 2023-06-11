@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   
   scope module: :user do
     resources :sneakers, only: [:new, :index, :show]
+    resources :users, only:[:new, :show, :edit, :index,  :update, :destroy]
   end
   
   get "about" => "user/homes#about"
