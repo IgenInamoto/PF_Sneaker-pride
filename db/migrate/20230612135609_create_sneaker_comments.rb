@@ -1,9 +1,9 @@
 class CreateSneakerComments < ActiveRecord::Migration[6.1]
   def change
     create_table :sneaker_comments do |t|
-      t.comment :text
-      t.user_id :integer
-      t.sneaker_id :integer
+      t.text :comment
+      t.integer:user_id 
+      t.integer :sneaker_id 
 
       t.timestamps
     end
