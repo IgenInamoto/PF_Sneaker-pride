@@ -1,2 +1,8 @@
-<h1>User::Sneakers#new</h1>
-<p>Find me in app/views/user/sneakers/new.html.erb</p>
+<h1>画像投稿フォーム</h1>
+  <%= form_with model: @sneaker do |f| %>
+    <h4>Image</h4>
+      <%= f.file_field :image, accept: "image/*" %>
+    <h4>Explanation</h4>
+      <%= f.text_area :body %>
+    <%= f.submit 'Post' %>
+  <% end %>
