@@ -36,7 +36,7 @@ class User::UsersController < ApplicationController
     private
     
     def sneaker_params
-        params.require(:sneaker).permit(:title, :body)
+        params.require(:sneaker).permit(:title, :body, :image)
     end
     
     def user_params
