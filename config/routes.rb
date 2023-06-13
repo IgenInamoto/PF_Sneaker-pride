@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   }
   
   scope module: :user do
-    resources :sneakers, only:[:new, :edit, :index, :show, :create, :update, :destroy]
+    resources :sneakers, only:[:new, :edit, :index, :show, :create, :update, :destroy] do
+       resources :sneaker_comments, only:[:create, :destroy]
+    end
     resources :users, only:[:new, :show, :edit, :index,  :update, :destroy]
   end
   
