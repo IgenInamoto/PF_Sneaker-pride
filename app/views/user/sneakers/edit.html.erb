@@ -1,36 +1,11 @@
 <!--投稿されたsneakerの編集ページ-->
-<% flash.each do |message_type, message| %>
-  <div><%= message %></div>
-<% end %>
-<p id="notice"></p>
-<div class="container">
-    <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto" >
-        <h1>Editing Post</h1>
-        <% if @sneaker.errors.any? %>
-            <h3><%= @sneaker.errors.count %>error prohibited this obj from being saved:</h3>
-            <ul>
-            <% @sneaker.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-            </ul>
-        <% end %>
-   
-    <%= form_with model: @sneaker do |f| %>
-    
-    <h4>Title</h4>
-    <%= f.text_field :title,class:"col-xs-12" %>
-    <h4>Opinion</h4>
-    <%= f.text_area :body,class:"col-xs-12" %>
-    
-    
-     <%= f.submit 'Update',class: "btn btn-success" %>
-     
-    <% end %>
-    
-    <%= link_to "Show",sneaker_path(@sneaker.id)%> |
-    <%= link_to "Back",sneakers_path %>
-    </div>
-    </div>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>Editing Post</h1>
+    	<%= render 'layouts/errors', obj: @sneaker %>
+  		<%= render 'form', sneaker: @sneaker %>
+  		<%= link_to 'Show', @sneaker, class: "sneaker_#{@sneaker.id}" %> |
+  		<%= link_to 'Back', sneakers_path, class: "back" %>
+  </div>
 </div>
-
