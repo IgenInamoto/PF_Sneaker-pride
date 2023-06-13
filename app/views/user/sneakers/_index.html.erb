@@ -11,7 +11,7 @@
     <% sneakers.each do |sneaker| %>
       <tr>
         <td><%= link_to(sneaker.user) do %>
-          <%= image_tag sneaker.user.get_profile_image, size:'150x150' %>
+          <%= image_tag sneaker.user.get_profile_image, size:'100x100' %>
           <% end %>
         </td>
         <td><%= link_to sneaker, class: "sneaker_#{sneaker.id}" do %>
@@ -19,8 +19,8 @@
           <% end %>
         </td>
         <td><%= sneaker.body %></td>
-        <td class=<%#= "favorite-" + book.id.to_s %> >
-            <%#= render "favorites/btn", book: book %>
+        <td class=<%= "favorite-" + sneaker.id.to_s %> >
+            <%= render "user/favorites/favorite_btn", sneaker: sneaker %>
         </td>
         <td><%#= render "book_comments/counter", book: book %></td>
       </tr>

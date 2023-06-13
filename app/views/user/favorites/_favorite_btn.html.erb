@@ -1,0 +1,11 @@
+<% if sneaker.favorited_by?(current_user) %>
+  <%= link_to sneaker_favorites_path(sneaker), method: :delete, remote: true do %>
+    <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+    <%= sneaker.favorites.count %> 
+  <% end %>
+<% else %>
+  <%= link_to sneaker_favorites_path(sneaker), method: :post, remote: true do %>
+    <i class="fas fa-heart" aria-hidden="true"></i>
+    <%= sneaker.favorites.count %> 
+  <% end %>
+<% end %>
