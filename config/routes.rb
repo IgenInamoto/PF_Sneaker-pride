@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :user do
+    get 'favorites/create'
+    get 'favorites/destroy'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   # 会員用
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   scope module: :user do
     resources :sneakers, only:[:new, :edit, :index, :show, :create, :update, :destroy] do
        resources :sneaker_comments, only:[:create, :destroy]
+       resource :favorites, only: [:create, :destroy]
     end
     resources :users, only:[:new, :show, :edit, :index,  :update, :destroy]
   end
