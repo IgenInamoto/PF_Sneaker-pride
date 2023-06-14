@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :user do
-    get 'favorites/create'
-    get 'favorites/destroy'
-  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   # 会員用
