@@ -14,13 +14,20 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   
+  # ネストする 
   scope module: :user do
     resources :sneakers, only:[:new, :edit, :index, :show, :create, :update, :destroy] do
        resources :sneaker_comments, only:[:create, :destroy]
        resource :favorites, only: [:create, :destroy]
     end
-    resources :users, only:[:new, :show, :edit, :index,  :update, :destroy]
+    # ネストする
+    resources :users, only:[:new, :show, :edit, :index,  :update, :destroy] do
+      resource :relationships, only: [:create, :destroy]
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
+    end
   end
+  
   
   get "about" => "user/homes#about"
   root to: 'user/homes#top'
