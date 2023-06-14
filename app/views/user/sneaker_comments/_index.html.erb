@@ -1,8 +1,7 @@
 <table>
   <tbody>
-      <% sneaker.sneaker_comments.each do |sneaker_comment| %>
+    <% sneaker.sneaker_comments.each do |sneaker_comment| %>
       <tr>
-        
         <td>
           <%= link_to user_path(sneaker_comment.user) do %>
             <%= image_tag sneaker_comment.user.get_profile_image, size: "100x100" %><br>
@@ -16,6 +15,6 @@
           <% end %>
         </td>
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table>
