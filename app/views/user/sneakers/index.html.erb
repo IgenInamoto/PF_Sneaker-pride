@@ -1,16 +1,8 @@
 <!--投稿された投稿の一覧ページ-->
 <div class='container px-5 px-sm-0'>
   <%= render 'layouts/errors', obj: @sneaker %>
-  <div class='row'>
-    <div class='col-md-3'>
-      <h2>User info</h2>
-      <%= render 'user/users/info', user: current_user %>
-      <h2 class="mt-3">Sneakers</h2>
-      <%= render 'form', sneaker: @sneaker %>
-    </div>
-    <div class='col-md-8 offset-md-1'>
+    <div class='col-md-12 offset-md-1'>
       <h2>Sneakers</h2>
       <%= render 'index', sneakers: @sneakers %>
-    </div>
   </div>
 </div>
