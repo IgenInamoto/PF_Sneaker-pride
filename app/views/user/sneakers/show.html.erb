@@ -30,6 +30,10 @@
           <% end %>
         </tr>
       </table>
+        <div class="sneaker-comments-index">
+          <%= render "user/sneaker_comments/index", sneaker: @sneaker %>
+        <%= render "user/sneaker_comments/form", sneaker: @sneaker, sneaker_comment: @sneaker_comment %>
+        </div>
       </div>
     </div>
   </div>

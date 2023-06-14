@@ -1,18 +1,16 @@
 class User::SneakerCommentsController < ApplicationController
     
     def create
-        @sneaker = Sneaker.find(params[:sneaker_id])
-        @user = @sneaker.user
-        @sneaker_comment = current_user.sneaker_comments.new(sneaker_comment_params)
-        @sneaker_comment.sneaker_id = @sneaker.id
-        @sneaker_comment.save
+        sneaker = Sneaker.find(params[:sneaker_id])
+        @comment = current_user.sneaker_comments.new(sneaker_comment_params)
+        @comment.sneaker_id = sneaker.id
+        @comment.save
     end
     
     
     def destroy
-         @sneaker_comment = SneakerComment.find(params[:id]).destroy
-         @sneaker_comment.destroy
-         @sneaker = Sneaker.find(params[:sneaker_id])
+         @comment = SneakerComment.find(params[:id])
+         @comment.destroy
     end
     
      private
