@@ -22,7 +22,7 @@
         <td class=<%= "favorite-" + sneaker.id.to_s %> >
             <%= render "user/favorites/favorite_btn", sneaker: sneaker %>
         </td>
-        <td><%#= render "book_comments/counter", book: book %></td>
+        <td><%= render "user/sneaker_comments/counter", sneaker: @sneaker %></td>
       </tr>
     <% end %>
   </tbody>
