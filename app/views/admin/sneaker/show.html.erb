@@ -1,0 +1,30 @@
+<div>
+    <td><%= link_to(@sneaker.user) do %>
+        <%= image_tag @sneaker.user.get_profile_image, size:"100x100" %><br>
+        <%= @sneaker.user.name %>
+        <% end %>
+    </td>
+      <p>投稿ユーザー画像：<%= image_tag @post.user.get_profile_image, size: "64x64" %></p>
+    <td width="50%" height="50%"><%= link_to @sneaker, class: "sneaker_#{@sneaker.id}" do %>
+          <%= image_tag @sneaker.image, width: '50%', height: '50%' %>
+          <% end %>
+    </td>
+    <%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_sneaker_#{@sneaker.id}" %>
+</div>
+
+<div>
+   <tr>
+      <td class=<%= "favorite-" + @sneaker.id.to_s %> >
+        <%= render "user/favorites/favorite_btn", sneaker: @sneaker %>
+      </td>
+      <td class="sneaker-comments-counter">
+        <%= render "user/sneaker_comments/counter", sneaker: @sneaker %>
+      </td>
+    </tr>
+        <%= link_to "削除", admin_sneaker_sneaker_comment(comment.sneaker comment), method: :delete %>
+</div>
+<div>
+  <p>
+    <%= @sneaker.likes.count %> マッチョだね
+  </p>
+</div>
