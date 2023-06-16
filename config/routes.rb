@@ -14,7 +14,19 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   
-  # ネストする 
+  # 管理者側
+  namespace :admin do
+    root to: 'admin/homes#top'
+    get "about" => "admin/homes#about"
+    resources :users, only: [:show, :index, :destroy]
+    # ネストする
+    resources :sneakers, only: [:show, :destroy] do
+    resources :sneaker_comments, only: [:destroy]
+    end
+  end
+  
+  # ユーザー側
+  #ネストする 
   scope module: :user do
     resources :sneakers, only:[:new, :edit, :index, :show, :create, :update, :destroy] do
        resources :sneaker_comments, only:[:create, :destroy]
