@@ -16,11 +16,10 @@ Rails.application.routes.draw do
   
   # 管理者側
   namespace :admin do
-    root to: 'admin/homes#top'
-    get "about" => "admin/homes#about"
+    root to: 'homes#top'
     resources :users, only: [:show, :index, :destroy]
     # ネストする
-    resources :sneakers, only: [:show, :destroy] do
+    resources :sneakers, only: [:show, :index, :destroy] do
     resources :sneaker_comments, only: [:destroy]
     end
   end

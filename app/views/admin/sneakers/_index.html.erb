@@ -1,0 +1,25 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Image</th>
+      <th>Explanation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sneakers.each do |sneaker| %>
+      <tr>
+        <td><%= link_to (sneaker.user) do %>
+          <%= image_tag sneaker.user.get_profile_image, size:'70x70' %>
+          <% end %>
+        </td>
+        <td width="500" height="300"><%= link_to sneaker, class: "sneaker_#{sneaker.id}" do %>
+          <%= image_tag sneaker.image, width: '50%', height: '50%' %>
+          <% end %>
+        </td>
+        <td><%= sneaker.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
