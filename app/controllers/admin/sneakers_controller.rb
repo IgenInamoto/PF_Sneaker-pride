@@ -1,7 +1,12 @@
-class Admin::SneakerController < ApplicationController
+class Admin::SneakersController < ApplicationController
+     before_action :authenticate_admin!
     
     def show
-        @sneaker = Sneaker.find(params[:id])
+         @sneaker = Sneaker.find(params[:id])
+    end
+    
+    def index
+         @sneakers = Sneaker.all
     end
     
     def destroy

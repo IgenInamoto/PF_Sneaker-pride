@@ -9,8 +9,8 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             
-           
-            <%= render 'user/users/search'%> <!--検索窓-->
+            <!--検索窓-->
+            <%= render 'user/users/search'%>
     
         <% if user_signed_in? %>
           <li class="nav-item">
@@ -33,6 +33,31 @@
               <i class="fa-sharp fa-solid fa-arrow-right-from-bracket fa-fade"></i>Log out
               <% end %>
           </li>
+          
+          <!--管理者ログイン-->
+           <% elsif admin_signed_in? %>
+          <li>
+            <%= link_to  admin_root_path, class:'nav-link text-dark' do %>
+            <i class="fa-solid fa-house-user fa-bounce"></i>Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_users_path, class:'nav-link text-dark' do %>
+            <i class="fas fa-users"></i>Users
+            <% end %>
+          </li>
+           <li>
+          <%= link_to admin_sneakers_path, class:'nav-link text-dark' do %>
+              <i class="fa-solid fa-shoe-prints fa-bounce"></i>Sneakers
+          <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_admin_session_path, method: :delete, class:'nav-link text-dark' do %>
+             <i class="fas fa-user-slash"></i>ログアウト
+            <% end %>
+          </li>
+          
+          <!--未ログイン-->
         <% else %>
           <li class="nav-item">
             <%= link_to root_path, class:'nav-link text-light' do %>
@@ -55,5 +80,7 @@
               <% end %>
           </li>
         <% end %>
-    
+      </div>
+      </div>
+    </nav>
 </header>

@@ -1,8 +1,8 @@
 class Admin::SneakerCommentsController < ApplicationController
+     before_action :authenticate_admin!
     
     def destroy
-        SneakerComments.find(params[:id]).destroy
-        redirect_to admin_snekaer_path(params[:sneaker_id])
+       
     end
     
 end
