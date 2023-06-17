@@ -29,9 +29,6 @@ class User::UsersController < ApplicationController
         end
     end
     
-    def destroy
-        
-    end
     
     private
     
