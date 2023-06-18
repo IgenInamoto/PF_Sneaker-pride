@@ -8,7 +8,7 @@ class User::SneakersController < ApplicationController
   end
 
   def index
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.page(params[:page])
     @sneaker = Sneaker.new
   end
 
