@@ -1,5 +1,5 @@
 <table class='table'>
-  <tr><%= image_tag user.get_profile_image, size:'100x100' %></tr>
+  <tr><%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %></tr>
   <tr>
 	  <th>name</th>
 	  <th><%= user.name %></th>
@@ -20,6 +20,6 @@
 　
 <div class='row'>
     <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
-      <i class="fas fa-user-cog"></i>
+      <i class="fa-solid fa-user-gear fa-beat" style="color: #0b35e0;"></i>
     <% end %>
 </div>
