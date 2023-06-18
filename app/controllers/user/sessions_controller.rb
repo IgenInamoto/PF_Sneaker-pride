@@ -2,6 +2,7 @@
 
 class User::SessionsController < Devise::SessionsController
   before_action :authenticate_user!, except: [:top, :about]
+  before_action :reject_inactive_user, only: [:create]
   before_action :configure_permitted_parameters, if: :devise_controller?
     
     def after_sign_in_path_for(resource)
@@ -19,6 +20,7 @@ class User::SessionsController < Devise::SessionsController
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
   end
   
+
   def reject_user
     @user = User.find_by(name: params[:user][:name])
     if @user 
@@ -27,6 +29,7 @@ class User::SessionsController < Devise::SessionsController
         redirect_to new_user_registration
       else
         flash[:notice] = "項目を入力してください"
+
       end
     end
   end

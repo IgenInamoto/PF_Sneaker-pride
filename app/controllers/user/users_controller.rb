@@ -29,6 +29,7 @@ class User::UsersController < ApplicationController
         end
     end
     
+
     def withdrawal
         @user = User.find(params[:id])
         # is_deletedカラムをtrueに変更することにより削除フラグを立てる
@@ -37,6 +38,7 @@ class User::UsersController < ApplicationController
         flash[:notice] = "退会処理を実行いたしました"
         redirect_to root_path
     end
+
     
     private
     

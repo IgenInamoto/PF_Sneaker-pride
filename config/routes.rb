@@ -36,7 +36,7 @@ Rails.application.routes.draw do
        resource :favorites, only: [:create, :destroy]
     end
     # ネストする
-    resources :users, only:[:new, :show, :edit, :index,  :update, :destroy] do
+    resources :users, only:[:new, :show, :edit, :index,  :update] do
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
@@ -47,6 +47,12 @@ Rails.application.routes.draw do
   get "about" => "user/homes#about"
   root to: 'user/homes#top'
   
+  # 検索用
   get '/search', to: 'user/searches#search'
+  
+get 'unsubscribe/:name' => 'homes#unsubscribe', as: 'confirm_unsubscribe'
+patch ':id/withdraw/:name' => 'homes#withdraw', as: 'withdraw_user'
+put 'withdraw/:name' => 'users#withdraw'
+
   
 end
