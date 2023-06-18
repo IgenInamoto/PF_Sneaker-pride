@@ -3,10 +3,11 @@ class Admin::SneakersController < ApplicationController
     
     def show
          @sneaker = Sneaker.find(params[:id])
+         @sneakers = Sneaker.page(params[:page])
     end
     
     def index
-         @sneakers = Sneaker.all
+         @sneakers = Sneaker.page(params[:page])
     end
     
     def destroy

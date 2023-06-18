@@ -19,6 +19,9 @@
 
 body {
   padding-bottom: 60px; /* フッターの高さ分のマージンを追加 */
+  background-image: url("blue-toned-paper-sheets-with-copy-space.jpg");
+  height: 800px;
+  background-size: cover;
 }
 
 footer {
@@ -26,4 +29,5 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  background-color: #2060A0;
 }

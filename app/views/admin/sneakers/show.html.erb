@@ -8,18 +8,18 @@
     <h2>Post Sneaker</h2>
         <table class='table'>
           <tr>
-          <td><%= link_to(@sneaker.user) do %>
+          <td><%= link_to admin_user_path(@sneaker.user) do %>
             <%= image_tag @sneaker.user.get_profile_image, size:"100x100" %><br>
             <%= @sneaker.user.name %>
             <% end %>
           </td>
-           <td width="50%" height="50%"><%= link_to @sneaker, class: "sneaker_#{@sneaker.id}" do %>
-          <%= image_tag @sneaker.image, width: '50%', height: '50%' %>
-          <% end %>
+           <td width="50%" height="50%">
+            <%= link_to admin_sneaker_path(@sneaker), class: "sneaker_#{@sneaker.id}" do %>
+            <%= image_tag @sneaker.image, width: '50%', height: '50%' %>
+            <% end %>
           </td>
-           <% if @sneaker.user == current_user %>
-            <td><%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_sneaker_#{@sneaker.id}" %></td>
-          <% end %>
+            <td><%= link_to 'Destroy', admin_sneaker_path(@sneaker), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_sneaker_#{@sneaker.id}" %></td>
+
         </tr>
         <tr>
           <td><%= @sneaker.body %></td>
