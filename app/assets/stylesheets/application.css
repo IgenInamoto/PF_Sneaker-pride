@@ -14,4 +14,16 @@
  *= require_self
  */
  
+ 
  * { font-family: 'Noto Sans JP', sans-serif; }
+
+body {
+  padding-bottom: 60px; /* フッターの高さ分のマージンを追加 */
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

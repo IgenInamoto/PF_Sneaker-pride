@@ -49,10 +49,6 @@ Rails.application.routes.draw do
   
   # 検索用
   get '/search', to: 'user/searches#search'
-  
-get 'unsubscribe/:name' => 'homes#unsubscribe', as: 'confirm_unsubscribe'
-patch ':id/withdraw/:name' => 'homes#withdraw', as: 'withdraw_user'
-put 'withdraw/:name' => 'users#withdraw'
 
   
 end
