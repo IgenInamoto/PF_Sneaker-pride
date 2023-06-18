@@ -20,13 +20,16 @@ class User::SessionsController < Devise::SessionsController
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
   end
   
-  # 退会処理を行った会員が、同じアカウントでログイン出来ないようにする。
-  # 会員の論理削除のための記述。退会後は、同じアカウントでは利用できない。
-  def reject_inactive_user
+
+  def reject_user
     @user = User.find_by(name: params[:user][:name])
-    if @user
-      if @user.valid_password?(params[:user][:password]) && !@user.is_valid
-        redirect_to new_user_session_path
+    if @user 
+      if @user.valid_password?(params[:user][:password]) && (@user.is_deleted == false)
+        flash[:notice] = "退会済みです。再度ご登録をしてご利用ください。"
+        redirect_to new_user_registration
+      else
+        flash[:notice] = "項目を入力してください"
+
       end
     end
   end

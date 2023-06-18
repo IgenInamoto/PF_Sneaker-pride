@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   # ユーザー側
   #ネストする 
   scope module: :user do
+    # 退会確認画面
+    get '/users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+    # 論理削除用のルーティング
+    patch '/users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
     resources :sneakers, only:[:new, :edit, :index, :show, :create, :update, :destroy] do
        resources :sneaker_comments, only:[:create, :destroy]
        resource :favorites, only: [:create, :destroy]
