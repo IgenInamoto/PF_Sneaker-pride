@@ -7,14 +7,14 @@ class User::UsersController < ApplicationController
     end
     
     def index
-        @users = User.all
+        @users = User.page(params[:page])
         @sneaker = Sneaker.new
     end
     
     def show
         @user = User.find(params[:id])
         @sneaker = Sneaker.new
-        @sneakers = @user.sneakers
+        @sneakers = @user.sneakers.page(params[:page])
     end
     
     def edit
