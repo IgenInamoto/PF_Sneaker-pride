@@ -1,25 +1,27 @@
 <table class='table'>
-  <tr><%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %></tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= user.name %></th>
+  <tr><%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %>
+      <%= link_to edit_user_path(user), class: "btn btn btn-warning, rounded-circle edit_user_#{user.id}" do %>
+      <i class="fa-solid fa-user-gear"></i>
+    <% end %>
   </tr>
   <tr>
-	  <th>introduction</th>
-	  <th><%= user.introduction %></th>
+	  <th class="table-secondary">name</th>
+	  <th class="table-secondary"><%= user.name %></th>
   </tr>
   <tr>
-    <th>follows</th>
-    <th><%= link_to user.followings.count, user_followings_path(user) %></th>
+	  <th class="table-secondary">introduction</th>
+	  <th class="table-secondary"><%= user.introduction %></th>
   </tr>
   <tr>
-    <th>followers</th>
-    <th><%= link_to user.followers.count, user_followers_path(user) %></th>
+    <th class="table-secondary">follows</th>
+    <th class="table-secondary"><%= link_to user.followings.count, user_followings_path(user) %></th>
+  </tr>
+  <tr>
+    <th class="table-secondary">followers</th>
+    <th class="table-secondary"><%= link_to user.followers.count, user_followers_path(user) %></th>
   </tr>
 </table>
 　
 <div class='row'>
-    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
-      <i class="fa-solid fa-user-gear fa-beat" style="color: #0b35e0;"></i>
-    <% end %>
+
 </div>
