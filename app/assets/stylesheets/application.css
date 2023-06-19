@@ -14,10 +14,12 @@
  *= require_self
  */
  
- 
- * { font-family: 'Noto Sans JP', sans-serif; }
+ h1{
+  text-align: center;
+}
 
 body {
+  font-family: 'PT Serif', serif;
   padding-bottom: 60px; /* フッターの高さ分のマージンを追加 */
   background-image: url("blue-toned-paper-sheets-with-copy-space.jpg");
   height: 800px;
@@ -25,9 +27,9 @@ body {
 }
 
 footer {
+  width:100%;
+  height: 100px;
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
-  background-color: #2060A0;
+  background-color: #1E90FF;
 }
