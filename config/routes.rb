@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     sessions: 'user/sessions'
   }
   
+  # ゲストログイン用
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+  
   # 管理者用
   # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations], controllers: {
