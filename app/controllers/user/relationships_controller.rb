@@ -1,7 +1,7 @@
 class User::RelationshipsController < ApplicationController
     before_action :authenticate_user!
     # ゲストユーザーとしてログインした場合は閲覧を制限する
-    before_action :guest_check
+    # before_action :guest_check, only: [:create, :destroy, :followings, :followers]
 
     
     def create

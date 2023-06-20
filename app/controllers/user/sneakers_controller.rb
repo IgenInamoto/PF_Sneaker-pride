@@ -1,8 +1,8 @@
 class User::SneakersController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy] #ログインしているユーザーのみ情報編集出来るようにする。
   # ゲストユーザーとしてログインした場合は閲覧を制限する
-  before_action :guest_check, only: [:new, :create, :update, :destroy]
+  # before_action :guest_check, only: [:new, :create, :update, :destroy]
 
   
   def new

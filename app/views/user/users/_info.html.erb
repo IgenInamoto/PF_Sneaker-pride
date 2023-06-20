@@ -1,7 +1,7 @@
 <table class='table'>
   <tr><%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %>
-      <%= link_to edit_user_path(user), class: "btn btn btn-warning, rounded-circle edit_user_#{user.id}" do %>
-      <i class="fa-solid fa-user-gear"></i>
+      <% if user.name != "guestuser" %>
+      <%= link_to 'プロフィール編集' ,edit_user_path(user), class: "btn btn-outline-secondary btn-block, edit_user_#{user.id}"  %>
     <% end %>
   </tr>
   <tr>
