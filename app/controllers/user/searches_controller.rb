@@ -1,6 +1,7 @@
 class User::SearchesController < ApplicationController
     before_action :authenticate_user!
     
+    
     def search
         @range = params[:range] #検索モデル→params[:range]
         @word = params[:word] #検索ワード→params[:word]
