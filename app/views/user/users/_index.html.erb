@@ -1,19 +1,19 @@
 <table class='table'>
   <thead>
     <tr>
-      <th class="table-warning"><strong>Profile-Image</strong></th>
-      <th class="table-warning"><strong>User Name</strong></th>
-      <th class="table-warning"><i class="fa-solid fa-handshake-simple"></i>Follow or Unfollow<i class="fa-solid fa-handshake-simple-slash"></i></th>
-      <th class="table-warning"><strong>Go to user profile</strong></th>
+      <th class="table-secondary"><strong>Profile-Image</strong></th>
+      <th class="table-secondary"><strong>User Name</strong></th>
+      <th class="table-secondary"><i class="fa-solid fa-handshake-simple"></i>Follow or Unfollow<i class="fa-solid fa-handshake-simple-slash"></i></th>
+      <th class="table-secondary"><strong>Go to user profile</strong></th>
     </tr>
   </thead>
   <tbody>
     <% users.each do |user| %>
       <tr>
-        <td><%= image_tag user.get_profile_image, class: "rounded-circle", size: '50x50' %></td>
-        <td><%= user.name %></td>
-        <td><%= render "user/relationships/follow_btn", user: user %></td>
-        <td><%= link_to 'User_Profile', user, class: "user_#{user.id}", class: "btn btn-info" %></td>
+        <td class="table-info"><%= image_tag user.get_profile_image, class: "rounded-circle", size: '50x50' %></td>
+        <td class="table-info"><%= user.name %></td>
+        <td class="table-info"><%= render "user/relationships/follow_btn", user: user %></td>
+        <td class="table-info"><%= link_to 'User_Profile', user, class: "user_#{user.id}", class: "btn btn-info" %></td>
       </tr>
     <% end %>
     <%= paginate users %>
