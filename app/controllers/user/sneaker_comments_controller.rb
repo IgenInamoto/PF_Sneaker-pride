@@ -1,6 +1,6 @@
 class User::SneakerCommentsController < ApplicationController
     # ゲストユーザーとしてログインした場合は閲覧を制限する
-    before_action :guest_check
+    # before_action :guest_check, only: [:create, :destroy]
 
     
     def create
@@ -19,7 +19,7 @@ class User::SneakerCommentsController < ApplicationController
      private
 
   def sneaker_comment_params
-    params.require(:sneaker_comment).permit(:comment)
+    params.require(:sneaker_comment).permit(:comment, :guest_check)
   end
     
     

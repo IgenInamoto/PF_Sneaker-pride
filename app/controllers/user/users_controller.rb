@@ -1,8 +1,10 @@
 class User::UsersController < ApplicationController
     before_action :authenticate_user!
-    before_action :ensure_correct_user, only: [:edit, :update]
+    before_action :ensure_correct_user, only: [:edit, :update] #ログインしているユーザーのみ情報編集出来るようにする。
     # ゲストユーザーとしてログインした場合は閲覧を制限する
-    before_action :guest_check, only: [:update, :withdrawal]
+    # before_action :guest_check, only: [:update, :withdrawal]
+    before_action :ensure_guest_user, only: [:edit]#before_actionでeditアクション実行前に処理を行う
+  
 
     def new
         @user = User.new
@@ -49,7 +51,7 @@ class User::UsersController < ApplicationController
     end
     
     def user_params
-        params.require(:user).permit(:name,:introduction, :profile_image)
+        params.require(:user).permit(:name,:introduction, :profile_image, :guest_check)
     end
     
     def ensure_correct_user
@@ -58,5 +60,12 @@ class User::UsersController < ApplicationController
           redirect_to user_path(current_user)
         end
     end
+    
+    def ensure_guest_user
+        @user = User.find(params[:id])
+        if @user.name == "guestuser"
+          redirect_to user_path(current_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+        end
+    end  
     
 end

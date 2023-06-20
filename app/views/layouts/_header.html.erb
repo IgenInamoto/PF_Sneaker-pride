@@ -12,7 +12,7 @@
             
             <!--検索窓-->
             <%= render 'user/users/search'%>
-    
+    <div class = "md">
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to user_path(current_user.id), class:'nav-link text-light' do %>
@@ -81,6 +81,7 @@
               <% end %>
           </li>
         <% end %>
+        </div>
       </div>
       </div>
     </nav>
