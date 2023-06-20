@@ -30,6 +30,12 @@ class User < ApplicationRecord
     end
   end
   
+  def guest_check
+    if current_menber == Menber.find(1)
+      redirect_to root_path,notice: "このページを見るには会員登録が必要です。"
+    end
+  end
+  
   # フォローした時の処理
   def follow(user)
     relationships.create(followed_id: user.id)

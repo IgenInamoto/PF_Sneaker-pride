@@ -1,7 +1,9 @@
 class User::SneakersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-  
+  # ゲストユーザーとしてログインした場合は閲覧を制限する
+  before_action :guest_check, only: [:new, :create, :update, :destroy]
+
   
   def new
     @sneaker = Sneaker.new
@@ -29,8 +31,7 @@ class User::SneakersController < ApplicationController
          flash[:notice] = "You have created book successfully."
       redirect_to sneaker_path(@sneaker.id)
     else
-      @sneakers = Sneaker.all
-      render 'index'
+      render "index"
     end
   end
   
@@ -51,7 +52,7 @@ class User::SneakersController < ApplicationController
   private
   
   def sneaker_params
-     params.require(:sneaker).permit(:title, :body, :image)
+     params.require(:sneaker).permit(:title, :body, :image, :guest_check)
   end
   
   def user_params

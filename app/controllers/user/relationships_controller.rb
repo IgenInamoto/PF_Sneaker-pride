@@ -1,5 +1,8 @@
 class User::RelationshipsController < ApplicationController
     before_action :authenticate_user!
+    # ゲストユーザーとしてログインした場合は閲覧を制限する
+    before_action :guest_check
+
     
     def create
         user = User.find(params[:user_id])

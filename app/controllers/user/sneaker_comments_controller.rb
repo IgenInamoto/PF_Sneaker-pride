@@ -1,4 +1,7 @@
 class User::SneakerCommentsController < ApplicationController
+    # ゲストユーザーとしてログインした場合は閲覧を制限する
+    before_action :guest_check
+
     
     def create
         sneaker = Sneaker.find(params[:sneaker_id])
