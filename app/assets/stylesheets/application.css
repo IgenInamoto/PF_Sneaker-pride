@@ -21,7 +21,7 @@
 body {
   font-family: 'PT Serif', serif;
   padding-bottom: 60px; /* フッターの高さ分のマージンを追加 */
-  background-image: url("Water.jpg");
+  background-image: imageurl("Water.jpg");
   height: 800px;
   background-size: cover;
 }
