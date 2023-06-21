@@ -1,0 +1,49 @@
+<!--Sneaker投稿後のページ-->
+<div class='container-fluid'>
+  <div class="full-width">
+  <div class='row'>
+    <div class='col-xl-3'>
+      <h2>User info</h2>
+      <%= render 'user/users/info', user: @sneaker.user %>
+      <h2 class="mt-3">New Post</h2>
+      <%= render 'form', sneaker: Sneaker.new %>
+    </div>
+    <div class='col-md-9'>
+      
+  		<h2>Post Sneaker</h2>
+  		<table class='table'>
+  		  <tr>
+          <td><%= link_to(@sneaker.user) do %>
+            <%= image_tag @sneaker.user.get_profile_image, class: "rounded-circle", size:"100x100" %><br>
+            <%= @sneaker.user.name %>
+            <% end %>
+          </td>
+           <td width="50%" height="50%"><%= link_to @sneaker, class: "sneaker_#{@sneaker.id}" do %>
+          <%= image_tag @sneaker.image, width: '50%', height: '50%' %>
+          <% end %>
+          </td>
+           <% if @sneaker.user == current_user %>
+            <td><%= link_to 'Edit', edit_sneaker_path(@sneaker), class: "btn btn-sm btn-success edit_sneaker_#{@sneaker.id}" %></td>
+            <td><%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_sneaker_#{@sneaker.id}" %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td><%= @sneaker.body %></td>
+        </tr>
+        <tr>
+          <td class=<%= "favorite-" + @sneaker.id.to_s %> >
+            <%= render "user/favorites/favorite_btn", sneaker: @sneaker %>
+          </td>
+          <td class="sneaker-comments-counter">
+            <%= render "user/sneaker_comments/counter", sneaker: @sneaker %>
+          </td>
+        </tr>
+      </table>
+        <div class="sneaker-comments-index">
+          <%= render "user/sneaker_comments/index", sneaker: @sneaker %>
+        </div>
+         <%= render "user/sneaker_comments/form", sneaker: @sneaker, sneaker_comment: @sneaker_comment %>
+      </div>
+    </div>
+  </div>
+</div>

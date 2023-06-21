@@ -1,0 +1,25 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th class="table-warning"><strong>Profile-Image</strong></th>
+      <th class="table-warning"><strong>Image</strong></th>
+      <th class="table-warning"><strong>Explanation</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sneakers.each do |sneaker| %>
+      <tr>
+        <td><%= link_to admin_user_path(sneaker.user) do %>
+          <%= image_tag sneaker.user.get_profile_image, class: "rounded-circle", size:'100x100' %>
+          <% end %>
+        </td>
+        <td width="500" height="300"><%= link_to admin_sneaker_path(sneaker), class: "sneaker_#{sneaker.id}" do %>
+          <%= image_tag sneaker.image, width: '50%', height: '50%' %>
+          <% end %>
+        </td>
+        <td><%= sneaker.body %></td>
+      </tr>
+    <% end %>
+     <%= paginate sneakers %>
+  </tbody>
+</table>

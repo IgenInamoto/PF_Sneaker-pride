@@ -1,0 +1,8 @@
+<!--投稿された投稿の一覧ページ-->
+<div class='container-fluid'>
+  <%= render 'layouts/errors', obj: @sneaker %>
+    <div class='col-xl-12'>
+      <h1><strong>Sneakers</strong></h1>
+      <%= render 'index', sneakers: @sneakers %>
+  </div>
+</div>

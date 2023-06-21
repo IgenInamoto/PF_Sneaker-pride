@@ -1,10 +1,13 @@
 # Sneaker-Pride
-![Sneaker pride](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/65800761-4763-4fc3-bb3f-cb41dc9dcb60)
+![Home3](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/6d71f429-5fbb-4f6c-82eb-bdb56e25d02f)
+![Logo3](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/1fddc12d-faa5-4eb8-9ba2-e2c60272c753)
+![Logo2](https://github.com/IgenInamoto/PF_Sneaker-pride/assets/129597502/898a4060-ae26-4235-a3a4-999c5226942f)
+
 
 ## サイト概要
 
 ### サイトテーマ
-他の人も褒めて自分も褒められて承認欲求満たして更にスニーカーを好きになるためのコミュニティサイトです。
+他の人も褒めて自分も褒められて承認欲求満たして更にスニーカーを好きになるためのSNSサイトです。
 
 ### テーマを選んだ理由
 Twitter等のSNSでもスニーカーの自慢は出来るが、もっとスニーカー自慢に特化したサイトが欲しいなと思ったからです！<br>
@@ -32,4 +35,6 @@ Twitter等のSNSでもスニーカーの自慢は出来るが、もっとスニ�
 - IDE：Cloud9
 
 ## 使用素材
-使用検討中です。(著作権侵害を防ぐため自作ロゴ、フリー素材の使用を検討中)
+- [Font Awesome](https://fontawesome.com/)
+- [Canva(ロゴ、トップ画像等)](https://www.canva.com/)
+- [Pixabay(フリー素材サイト内投稿画像用)](https://pixabay.com/ja/)

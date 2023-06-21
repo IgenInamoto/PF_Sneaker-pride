@@ -1,0 +1,11 @@
+<!--投稿されたsneakerの編集ページ-->
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>Editing Post</h1>
+    	<%= render 'layouts/errors', obj: @sneaker %>
+  		<%= render 'form', sneaker: @sneaker %>
+  		<%= link_to 'Show', @sneaker, class: "sneaker_#{@sneaker.id}" %> |
+  		<%= link_to 'Back', sneakers_path, class: "back" %>
+  </div>
+</div>
