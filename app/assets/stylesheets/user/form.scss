@@ -9,7 +9,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: #00BFFF;
+  background-color: #708090;
   text-align: center;
 }
 
@@ -27,7 +27,7 @@ body {
   background: none;
   display: block;
   margin: 20px auto;
-  border: 2px solid #ff69b4;
+  border: 2px solid #FFFFFF;
   padding: 15px 10px;
   width: 200px;
   outline: none;
@@ -42,7 +42,7 @@ body {
   background: none;
   display: block;
   margin: 20px auto;
-  border: 2px solid #ff69b4;
+  border: 2px solid #FFFFFF;
   padding: 15px 10px;
   width: 200px;
   outline: none;
@@ -56,7 +56,7 @@ body {
   background: none;
   display: block;
   margin: 20px auto;
-  border: 2px solid #ff69b4;
+  border: 2px solid #FFFFFF;
   padding: 15px 10px;
   width: 200px;
   outline: none;
@@ -67,7 +67,7 @@ body {
 
 .box-password input[type = "id"]:focus,form input[type = "password"]:focus {
   width: 280px;
-  background-color: #f0f8ff;
+  background-color: #FFFFFF;
 }
 
 .remember_me input[type = "submit"]{
@@ -87,11 +87,45 @@ body {
 }
 
 .login input[type = "submit"]:hover {
-  background-color: #ff69b4;
-  border: 2px solid #ff69b4;
+font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
 }
 
 .signup input[type = "submit"]:hover {
-  background-color: #ff69b4;
-  border: 2px solid #ff69b4;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
 }

@@ -2,21 +2,21 @@
     <tr>
     <%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %>
     </tr>
-    <tr>
-  	  <th class="table-secondary">name</th>
-  	  <th class="table-secondary"><%= user.name %></th>
+    <tr class="color">
+  	  <th class="table-dark">name</th>
+  	  <th class="table-dark"><%= user.name %></th>
     </tr>
-    <tr>
-  	  <th class="table-secondary">introduction</th>
-  	  <th class="table-secondary"><%= user.introduction %></th>
+    <tr class="color">
+  	  <th class="table-dark">introduction</th>
+  	  <th class="table-dark"><%= user.introduction %></th>
     </tr>
-    <tr>
-      <th class="table-secondary">follows</th>
-      <th class="table-secondary"><%= link_to user.followings.count, user_followings_path(user) %></th>
+    <tr class="color">
+      <th class="table-dark">follows</th>
+      <th class="table-dark"><%= link_to user.followings.count, user_followings_path(user) %></th>
     </tr>
-    <tr>
-      <th class="table-secondary">followers</th>
-      <th class="table-secondary"><%= link_to user.followers.count, user_followers_path(user) %></th>
+    <tr class="color">
+      <th class="table-dark">followers</th>
+      <th class="table-dark"><%= link_to user.followers.count, user_followers_path(user) %></th>
     </tr>
 </table>
   <tr>

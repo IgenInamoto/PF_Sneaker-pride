@@ -1,16 +1,16 @@
 <table class='table'>
   <thead>
-    <tr class="table-secondary">
-      <th><strong>Profile-Image</strong></th>
-      <th><strong>Image</strong></th>
-      <th><strong>Explanation</strong></th>
-      <th><strong>Favorite</strong></th>
-      <th><strong>Comment</strong></th>
+    <tr class="table-outline-secondary">
+      <th class="color"><strong>Profile-Image</strong></th>
+      <th class="color"><strong>Image</strong></th>
+      <th class="color"><strong>Explanation</strong></th>
+      <th class="color"><strong>Favorite</strong></th>
+      <th class="color"><strong>Comment</strong></th>
     </tr>
   </thead>
   <tbody>
     <% sneakers.each do |sneaker| %>
-      <tr class="table-info">
+      <tr class="table-dark">
         <td><%= link_to(sneaker.user) do %>
           <%= image_tag sneaker.user.get_profile_image, class: "rounded-circle", size:'150x150' %>
           <% end %>

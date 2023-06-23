@@ -1,9 +1,9 @@
 
 <header>
-     <nav class="navbar navbar-expand-lg" style="background-color:#1E90FF;">
+     <nav class="navbar navbar-expand-lg" style="background-color:#708090;">
           <div class="container-fluid">
-          <th><%= link_to  image_tag('Logo2.png', size: '70x70'), root_path, class:'navbar-brand' %></th>
-          <h1 class="text-center mt-0" style="font-family: 'Sacramento', cursive;">Sneaker-Pride</h1>
+          <th><%= link_to  image_tag('Logo2.png', size: '70x70'), root_path, class: 'navbar-brand' %></th>
+          <h1 class="text-center mt-0 color" style="font-family: 'Sacramento', cursive;">Sneaker-Pride</h1>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -13,73 +13,73 @@
             <!--検索窓-->
             <%#= render 'user/users/search'%>
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="color">
             <%= link_to user_path(current_user.id), class:'nav-link text-light' do %>
-              <i class="fa-solid fa-house-user fa-bounce"></i>Home
+              Home
             <% end %>
           </li>
-          <li class="nav-item">
+          <li class="color">
             <%= link_to users_path, class:'nav-link text-light' do %>
-              <i class="fa-solid fa-users fa-bounce"></i>Users
+              Users
             <% end %>
           </li>
-          <li class="nav-item">
+          <li class="color">
           <%= link_to sneakers_path, class:'nav-link text-light' do %>
-              <i class="fa-solid fa-shoe-prints fa-bounce"></i>Sneakers
+              Sneakers
           <% end %>
           </li>
-          <li class="nav-item">
+          <li class="color">
           <%= link_to destroy_user_session_path, method: :delete, class:'nav-link text-light' do %>
-              <i class="fa-sharp fa-solid fa-arrow-right-from-bracket fa-fade"></i>Log out
+              Log out
               <% end %>
           </li>
           
           <!--管理者ログイン-->
            <% elsif admin_signed_in? %>
-          <li>
+          <li class="color">
             <%= link_to  admin_root_path, class:'nav-link text-dark' do %>
-            <i class="fa-solid fa-house-user fa-bounce"></i>Home
+            Home
             <% end %>
           </li>
-          <li>
+          <li class="color">
             <%= link_to admin_users_path, class:'nav-link text-dark' do %>
-            <i class="fas fa-users"></i>Users
+            Users
             <% end %>
           </li>
-           <li>
+           <li class="color">
           <%= link_to admin_sneakers_path, class:'nav-link text-dark' do %>
-              <i class="fa-solid fa-shoe-prints fa-bounce"></i>Sneakers
+              Sneakers
           <% end %>
           </li>
-          <li>
+          <li class="color">
             <%= link_to destroy_admin_session_path, method: :delete, class:'nav-link text-dark' do %>
-             <i class="fas fa-user-slash"></i>ログアウト
+             Log out
             <% end %>
           </li>
           
           <!--未ログイン-->
         <% else %>
-          <li class="nav-item">
+          <li class="color">
             <%= link_to root_path, class:'nav-link text-light' do %>
-             <i class="fa-solid fa-house-chimney"></i>Home
+             Home
               <% end %>
           </li>
-          <li class="nav-item">
+          <li class="color">
              <%= link_to about_path, class:'nav-link text-light' do %>
-              <i class="fas fa-link"></i>About
+              About
               <% end %>
           </li>
-          <li class="nav-item">
+          <li class="color">
              <%= link_to  new_user_registration_path, class:'nav-link text-light' do %>
-              <i class="fas fa-user-plus"></i>Sign up
+              Sign up
               <% end %>
           </li>
-          <li class="nav-item">
+          <li class="color">
             <%= link_to  new_user_session_path, class:'nav-link text-light' do %>
-              <i class="fas fa-sign-in-alt"></i>Log in
+              Log in
               <% end %>
           </li>
-           <li class="nav-item">
+           <li class="color">
           <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "btn btn-info", method: :post %>
           </li>
         <% end %>
