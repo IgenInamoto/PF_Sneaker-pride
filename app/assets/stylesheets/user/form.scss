@@ -22,7 +22,7 @@ body {
   font-size: 10px;
 }
 
-// :not(.no_css)の記述でinput[type = "text"]を(.no_css)にのみ適用しないことができる
+// :not(.no_css)の記述でinput[type = "text"]を(.no_css)のみ適用しないことができる
 .box-name input[type = "id"],form input:not(.no_css)[type = "text"] {
   border: 0;
   background: none;
