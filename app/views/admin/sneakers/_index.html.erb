@@ -1,11 +1,13 @@
-<table class='table table-hover table-inverse'>
-  <thead>
-    <tr class="table-outline-secondary">
-      <th class="color"><strong>Profile-Image</strong></th>
-      <th class="color"><strong>Image</strong></th>
-      <th class="color"><strong>Explanation</strong></th>
-    </tr>
-  </thead>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <table class='table'>
+      <thead>
+        <tr class="table-outline-secondary">
+          <th class="color"><strong>Profile-Image</strong></th>
+          <th class="color"><strong>Image</strong></th>
+          <th class="color"><strong>Explanation</strong></th>
+        </tr>
+      </thead>
   <tbody>
     <% sneakers.each do |sneaker| %>
       <tr class="table-secondary">
@@ -13,7 +15,7 @@
           <%= image_tag sneaker.user.get_profile_image, class: "rounded-circle", size:'100x100' %>
           <% end %>
         </td>
-        <td width="500" height="300"><%= link_to admin_sneaker_path(sneaker), class: "sneaker_#{sneaker.id}" do %>
+        <td width="400" height="300"><%= link_to admin_sneaker_path(sneaker), class: "sneaker_#{sneaker.id}" do %>
           <%= image_tag sneaker.image, width: '50%', height: '50%' %>
           <% end %>
         </td>
@@ -23,3 +25,5 @@
      <%= paginate sneakers %>
   </tbody>
 </table>
+</div>
+</div>
