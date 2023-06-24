@@ -1,3 +1,5 @@
+<!--ユーザー一覧ページ部分テンプレート-->
+
 <table class='table'>
   <thead>
     <tr class="table-outline-secondary">
@@ -9,13 +11,13 @@
   </thead>
   <tbody>
     <% users.each do |user| %>
-      <tr class="table-dark">
-        <td><%= image_tag user.get_profile_image, class: "rounded-circle", size: '50x50' %></td>
-        <td ><%= user.name %></td>
-        <td><%= render "user/relationships/follow_btn", user: user %></td>
-        <td><%= link_to 'User_Profile', user, class: "user_#{user.id}", class: "btn btn-info" %></td>
+      <tr class="color">
+        <td class="table-dark"><%= image_tag user.get_profile_image, class: "rounded-circle", size: '70x70' %></td>
+        <td class="table-dark"><%= user.name %></td>
+        <td class="table-dark"><%= render "user/relationships/follow_btn", user: user %></td>
+        <td class="table-dark"><%= link_to 'User_Profile', user, class: "user_#{user.id}", class: "btn btn-info" %></td>
       </tr>
     <% end %>
-    <%= paginate users %>
+    <%#= paginate users %>
   </tbody>
 </table>

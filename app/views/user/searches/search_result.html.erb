@@ -1,24 +1,33 @@
-<h2>Results</h2>
+<div class='container-fluid'>
+    <div class='col-xl-12'>
+      <h1 class="color display-2">Result</h1>
 
 <table class="table table-hover table-inverse">
   <!--検索対象モデルがUserの時 -->
   <% if @range == "User" %>
-    <tbody>
+    <tbody class="center table-dark">
       <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
         </tr>
       <% end %>
     </tbody>
-  <% else %>
+  <% elsif %>
     <!--検索対象モデルがUserではない時(= 検索対象モデルがSneakerの時) -->
-    <tbody>
+    <tbody class="center table-dark">
       <% @sneakers.each do |sneaker| %>
         <tr>
           <td> <%= image_tag sneaker.image, width: '50%', height: '50%' %></td>
           <td><%= sneaker.body %></td>
         </tr>
+    </tbody>
       <% end %>
+  <% else %>
+    <!--検索結果が何にも当てはまらない時-->
+    <tbody class="center table-dark">
+      <tr>
+          <td>No Results</td>
+      </tr>
     </tbody>
   <% end %>
 </table>

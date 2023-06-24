@@ -1,6 +1,8 @@
-<h2>Follower</h2>
+<div class='container-fluid'>
+    <div class='col-xl-12'>
+      <h1 class="color display-2">Follower</h1>
 <% if @users.exists? %>
   <%= render 'user/users/index', users: @users %>
 <% else %>
-  <p>ユーザーはいません</p>
+  <p class="center display-6">ユーザーはいません</p>
 <% end %>
