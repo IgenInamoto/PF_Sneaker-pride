@@ -19,7 +19,6 @@
 }
 
 body {
-  font-family: 'PT Serif', serif;
   padding-bottom: 60px; /* フッターの高さ分のマージンを追加 */
   background-image: image-url("sneaker14.jpg");
   height: 800px;
@@ -29,8 +28,9 @@ body {
 footer {
   width: 100%;
   height: 50px;
-  position: fixed;
+  position: sticky;  //stickyを使うことによってフッターを画面最下部に固定(コンテンツに被らない)
   bottom: 0;
+  left: 0;
   color: #FFFFFF;
   background-color: #708090;
   font-family: HiraMinProN-W6;
