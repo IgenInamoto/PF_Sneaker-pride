@@ -1,3 +1,15 @@
 // Place all the styles related to the user/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.top {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.about {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
