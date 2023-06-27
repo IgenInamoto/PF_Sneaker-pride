@@ -1,5 +1,5 @@
 <table>
-  <tbody>
+  <tbody class="table-dark">
     <% sneaker.sneaker_comments.each do |sneaker_comment| %>
       <tr>
         <td>
@@ -8,10 +8,11 @@
             <%= sneaker_comment.user.name %>
           <% end %>
         </td>
-        <td><%= sneaker_comment.comment %></td>
-        <td>
+        
+        <td class="table-dark col-md-8"><%= sneaker_comment.comment %></td>
+        <td class="table-dark col-md-2">
           <% if sneaker_comment.user == current_user %>
-            <%= link_to "Destroy", sneaker_sneaker_comment_path(sneaker, sneaker_comment), method: :delete, remote: true, class: "btn btn-danger pull-right" %>
+            <%= link_to "Destroy", sneaker_sneaker_comment_path(sneaker, sneaker_comment), method: :delete, data: { confirm: 'コメントを消しますか？' }, remote: true, class: "btn btn-danger pull-right" %>
           <% end %>
         </td>
       </tr>

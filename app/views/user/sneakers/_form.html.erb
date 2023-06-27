@@ -1,15 +1,15 @@
 <div class = "table-dark">
 <%= form_with model:sneaker,local:true do |f| %>
-  <div class="form-group">
+  <div class="form-group" type="file" id="formFile" >
     <%= f.label :Image %>
-    <%= f.file_field :image, class: 'form-control sneaker_image btn btn-outline-primary' %>
+    <%= f.file_field :image, class: 'form-control sneaker_image' %>
   </div>
   <div class="form-group">
     <%= f.label :Explanation %>
-    <%= f.text_area :body, class: 'form-control sneaker_body' %>
+    <%= f.text_area :body, placeholder: "投稿文はこちらに入力してください。",class: 'form-control sneaker_body' %>
   </div>
   <div class="form-group">
-    <%= f.submit class: 'btn btn-success' %>
+    <%= f.submit class: 'btn btn-success btn-lg' %>
   </div>
 <% end %>
 </div>

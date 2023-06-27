@@ -17,8 +17,10 @@
     <tbody class="center table-dark">
       <% @sneakers.each do |sneaker| %>
         <tr>
-          <td> <%= image_tag sneaker.image, width: '50%', height: '50%' %></td>
+          <td><%= link_to(@sneaker) do %>
+          <td><%= image_tag sneaker.image, width: '50%', height: '50%' %></td>
           <td><%= sneaker.body %></td>
+          <% end %>
         </tr>
     </tbody>
       <% end %>

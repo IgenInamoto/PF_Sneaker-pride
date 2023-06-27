@@ -1,25 +1,24 @@
 <!--Sneaker投稿後のページ-->
 <div class='container-fluid'>
   <div class="full-width">
-  <div class='row'>
-    <div class='col-xl-3'>
-      <h2 class="color">User info</h2>
-      <%= render 'user/users/info', user: @sneaker.user %>
-      <h2 class="color">New Post</h2>
-      <%= render 'form', sneaker: Sneaker.new %>
-    </div>
+    <div class='row'>
+      <div class='col-xl-3'>
+        <h2 class="table-dark color col-md-5">User info</h2>
+        <%= render 'user/users/info', user: @sneaker.user %>
+        <h2 class="table-dark color col-md-5">New Post</h2>
+        <%= render 'form', sneaker: Sneaker.new %>
+      </div>
     <div class='col-md-9'>
-      
-  		<h2 class="color">Post Sneaker</h2>
-  		<table class='table'>
-  		  <tr class="table-secondary">
+  		<h2 class="table-dark color col-3">Post Sneaker</h2>
+  		<table class='table table-dark'>
+  		  <tr>
           <td><%= link_to(@sneaker.user) do %>
-            <%= image_tag @sneaker.user.get_profile_image, class: "rounded-circle", size:"100x100" %><br>
+            <%= image_tag @sneaker.user.get_profile_image, class: "rounded-circle", size:"200x200" %><br>
             <%= @sneaker.user.name %>
             <% end %>
           </td>
            <td width="50%" height="50%"><%= link_to @sneaker, class: "sneaker_#{@sneaker.id}" do %>
-          <%= image_tag @sneaker.image, width: '50%', height: '50%' %>
+          <%= image_tag @sneaker.image, width: '70%', height: '70%' %>
           <% end %>
           </td>
            <% if @sneaker.user == current_user %>
@@ -27,10 +26,11 @@
             <td><%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_sneaker_#{@sneaker.id}" %></td>
           <% end %>
         </tr>
-        <tr class="table-secondary">
+        <tr>
+          <td class="col-md-6">Explanation:</td>
           <td><%= @sneaker.body %></td>
         </tr>
-        <tr class="table-secondary">
+        <tr>
           <td class=<%= "favorite-" + @sneaker.id.to_s %> >
             <%= render "user/favorites/favorite_btn", sneaker: @sneaker %>
           </td>

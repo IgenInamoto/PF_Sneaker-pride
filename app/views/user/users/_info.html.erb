@@ -1,27 +1,27 @@
 <table class='table'>
-  <tr><%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %>
+  <tr>
+    <%= image_tag user.get_profile_image, class: "rounded-circle", size:'100x100' %>
       <%= link_to edit_user_path(user), class: "btn btn btn-warning, edit_user_#{user.id}" do %>
       <i class="fa-sharp fa-solid fa-gear fa-spin fa-xl" style="color: #c8c9cb;"></i>
     <% end %>
   </tr>
   <tr class="color">
-	  <th class="table-dark">name</th>
+	  <th class="table-dark">Name</th>
 	  <th class="table-dark"><%= user.name %></th>
   </tr>
   <tr class="color">
-	  <th class="table-dark">introduction</th>
+	  <th class="table-dark">Introduction</th>
 	  <th class="table-dark"><%= user.introduction %></th>
   </tr>
   <tr class="color">
-    <th class="table-dark">follows</th>
+    <th class="table-dark">Follows</th>
     <th class="table-dark"><%= link_to user.followings.count, user_followings_path(user) %></th>
   </tr>
   <tr class="color">
-    <th class="table-dark">followers</th>
+    <th class="table-dark">Followers</th>
     <th class="table-dark"><%= link_to user.followers.count, user_followers_path(user) %></th>
   </tr>
 </table>
 　
 <div class='row'>
-
 </div>

@@ -3,13 +3,15 @@
   <div class="full-width">
   <div class='row'>
     <div class='col-xl-3'>
-      <h2 class="table-dark color">User info</h2>
+      <!--画面左側-->
+      <h2 class="table-dark color col-md-5">User info</h2>
       <%= render 'info', user: @user %>
-      <h2 class="table-dark color">Sneaker</h2>
+      <h2 class="table-dark color col-md-5">New Post</h2>
       <%= render 'user/sneakers/form', sneaker: @sneaker %>
     </div>
+    <!--画面右側-->
     <div class='col-md-8 offset-md-1'>
-      <h2 class="table-dark color">Sneakers</h2>
+      <h2 class="table-dark color col-md-2">Sneakers</h2>
       <%= render 'user/sneakers/index',sneakers: @sneakers %>
     </div>
   </div>
