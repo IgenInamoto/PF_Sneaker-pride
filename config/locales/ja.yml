@@ -1,0 +1,7 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%m/%d %H:%M"
+      
+    #   上の設定は日時（time）のデフォルトの書式を%Y/%m/%d %H:%M:%Sにするための設定。

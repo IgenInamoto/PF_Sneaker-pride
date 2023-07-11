@@ -11,6 +11,7 @@ class User::SneakersController < ApplicationController
 
   def index
     @sneakers = Sneaker.page(params[:page])
+    @sneakers = Sneaker.page.order(created_at: :desc)
     @sneaker = Sneaker.new
     @sneaker_comment = SneakerComment.new
   end
